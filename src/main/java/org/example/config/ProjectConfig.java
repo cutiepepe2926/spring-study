@@ -1,43 +1,10 @@
 package org.example.config;
 
-import org.example.main.Parrot;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @Configuration
+@ComponentScan(basePackages = "org.example.main")
 public class ProjectConfig {
-
-    @Bean
-    @Primary
-    Parrot parrot1() {
-        var p = new Parrot();
-        p.setName("Koko");
-        return p;
-    }
-
-    @Bean
-    Parrot parrot2() {
-        var p = new Parrot();
-        p.setName("Miko");
-        return p;
-    }
-
-    @Bean(name = "Riko")
-    Parrot parrot3() {
-        var p = new Parrot();
-        p.setName("Riko");
-        return p;
-    }
-
-    @Bean
-    String Hello() {
-        return "Hello";
-    }
-
-    @Bean
-    Integer ten() {
-        return 10;
-    }
 
 }

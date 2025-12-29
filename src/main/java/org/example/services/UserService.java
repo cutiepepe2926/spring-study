@@ -5,14 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CommentService {
+public class UserService {
 
-
-    private final CommentRepository commentRepository;
-
-    public CommentService(CommentRepository commentRepository) {
-        this.commentRepository = commentRepository;
-    }
+    @Autowired
+    private CommentRepository commentRepository;
 
     public CommentRepository getCommentRepository() {
         return commentRepository;

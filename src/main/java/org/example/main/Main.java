@@ -2,9 +2,7 @@ package org.example.main;
 
 
 import org.example.configuration.ProjectConfig;
-import org.example.model.Comment;
 import org.example.services.CommentService;
-import org.example.services.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
@@ -12,11 +10,8 @@ public class Main {
     public static void main(String[] args) {
         var c = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        var s1 = c.getBean(CommentService.class);
-        var s2 = c.getBean(UserService.class);
-
-        boolean b = s1.getCommentRepository() == s2.getCommentRepository();
-
-        System.out.println(b);
+        System.out.println("CommentService 건드리기 전!!!");
+        var service = c.getBean(CommentService.class);
+        System.out.println("CommentService 건드린 후!!!");
     }
 }

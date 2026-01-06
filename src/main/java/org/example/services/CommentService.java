@@ -1,6 +1,7 @@
 package org.example.services;
 
 import java.util.logging.Logger;
+import org.example.aspects.ToLog;
 import org.example.model.Comment;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +10,10 @@ public class CommentService {
 
     private Logger logger = Logger.getLogger(CommentService.class.getName());
 
-    public void publishComment(Comment comment) {
+    @ToLog
+    public String publishComment(Comment comment) {
         logger.info("Publishing comment:" + comment.getText());
+        return "SUCCESS";
     }
 
     public void setLogger(Logger logger) {

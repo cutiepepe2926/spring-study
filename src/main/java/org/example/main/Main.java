@@ -1,6 +1,7 @@
 package org.example.main;
 
 
+import java.util.logging.Logger;
 import org.example.configuration.ProjectConfig;
 import org.example.model.Comment;
 import org.example.services.CommentService;
@@ -14,7 +15,7 @@ public class Main {
         var service = c.getBean(CommentService.class);
 
         Comment comment = new Comment();
-        comment.setText("This is a comment");
+        comment.setText("Demo comment");
         comment.setAuthor("Natasha");
 
         service.publishComment(comment);
